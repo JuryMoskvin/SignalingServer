@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SignalingServer.Api/SignalingServer.Api.csproj" />
+    <Project Path="src/SignalingServer.Application/SignalingServer.Application.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/SignalingServer.Tests/SignalingServer.Tests.csproj" />
+  </Folder>
+</Solution>
