@@ -45,7 +45,7 @@ app.MapRoomEndpoints();
 app.MapIceServersEndpoints();
 app.MapSignalingEndpoints();
 
-app.MapGet("/health", () => Results.Ok(new { status = "ok" }));
+app.MapGet("/ws/health", () => Results.Ok(new { status = "ok" }));
 
 app.Run();
 

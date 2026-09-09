@@ -14,7 +14,7 @@ public class SignalingRelayIntegrationTests(WebApplicationFactory<Program> facto
     public async Task TwoPeers_ExchangeOfferThroughRelay_PayloadForwardedVerbatim()
     {
         using var httpClient = factory.CreateClient();
-        var createResponse = await httpClient.PostAsync("/api/rooms", null);
+        var createResponse = await httpClient.PostAsync("/ws/api/rooms", null);
         createResponse.EnsureSuccessStatusCode();
         var room = await createResponse.Content.ReadFromJsonAsync<CreateRoomResponse>();
         Assert.NotNull(room);
@@ -50,7 +50,7 @@ public class SignalingRelayIntegrationTests(WebApplicationFactory<Program> facto
     public async Task ThirdDevice_JoiningFullRoom_IsRejected()
     {
         using var httpClient = factory.CreateClient();
-        var createResponse = await httpClient.PostAsync("/api/rooms", null);
+        var createResponse = await httpClient.PostAsync("/ws/api/rooms", null);
         var room = await createResponse.Content.ReadFromJsonAsync<CreateRoomResponse>();
         Assert.NotNull(room);
 

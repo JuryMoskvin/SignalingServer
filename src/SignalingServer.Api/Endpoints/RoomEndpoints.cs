@@ -8,7 +8,7 @@ public static class RoomEndpoints
 {
     public static IEndpointRouteBuilder MapRoomEndpoints(this IEndpointRouteBuilder app)
     {
-        var group = app.MapGroup("/api/rooms").WithTags("Rooms");
+        var group = app.MapGroup("/ws/api/rooms").WithTags("Rooms");
 
         group.MapPost("/", (IRoomService roomService) =>
         {
