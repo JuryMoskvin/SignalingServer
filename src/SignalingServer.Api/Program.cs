@@ -9,6 +9,7 @@ using SignalingServer.Application.Signaling;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.Configure<IceServersOptions>(builder.Configuration.GetSection(IceServersOptions.SectionName));
+builder.Services.Configure<TurnOptions>(builder.Configuration.GetSection(TurnOptions.SectionName));
 
 var roomOptions = builder.Configuration.GetSection(RoomOptions.SectionName).Get<RoomOptions>() ?? new RoomOptions();
 builder.Services.AddSingleton(roomOptions);
